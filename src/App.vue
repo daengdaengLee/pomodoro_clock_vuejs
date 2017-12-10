@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import PomodoroClock from './components/PomodoroClock';
+import PomodoroClock from './components/PomodoroClock'
 
 export default {
   name: 'app',
   components: {
-    PomodoroClock,
+    PomodoroClock
   }
 }
 </script>
