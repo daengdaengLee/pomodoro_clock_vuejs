@@ -1,13 +1,13 @@
 <template>
   <div class="Setters">
     <setter
-      :setterName="'Break length'"
-      :displayNum="5"
+      :setter-name="'Break length'"
+      :init-num="5"
     >
     </setter>
     <setter
-      :setterName="'Session length'"
-      :displayNum="25"
+      :setter-name="'Session length'"
+      :init-num="25"
     >
     </setter>
   </div>
@@ -25,4 +25,9 @@ export default {
 </script>
 
 <style scoped>
+.Setters {
+  display: flex;
+  width: 25rem;
+  justify-content: space-between;
+}
 </style>
