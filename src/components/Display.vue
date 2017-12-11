@@ -1,20 +1,42 @@
 <template>
-  <div class="Display Session">
+  <div class="Display Session" @click="timerClick">
     <div class="State">
-      {{ "'Session'" }}
+      {{ state }}
     </div>
     <div class="Timer">
-      {{ sessionLength }}
+      {{ timer }}, {{ timerOnOff }}
     </div>
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
+import _ from 'lodash'
 
 export default {
   name: 'Display',
-  computed: mapState(['breakLength', 'sessionLength'])
+  data () {
+    return {
+      state: 'Session',
+      timerCount: 0,
+      timerOnOff: false
+    }
+  },
+  computed: _.extend(
+    {
+      timer () {
+        if (this.state === 'Session') {
+          return this.sessionLength - this.timerCount
+        }
+      }
+    },
+    mapState(['breakLength', 'sessionLength'])
+  ),
+  methods: {
+    timerClick () {
+      this.timerOnOff = !this.timerOnOff
+    }
+  }
 }
 </script>
 
