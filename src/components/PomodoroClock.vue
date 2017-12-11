@@ -1,7 +1,8 @@
 <template>
   <div class="PomodoroClock">
     <setters></setters>
-    <display></display>
+    <display>
+    </display>
   </div>
 </template>
 

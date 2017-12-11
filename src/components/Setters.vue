@@ -2,25 +2,31 @@
   <div class="Setters">
     <setter
       :setter-name="'Break length'"
-      :init-num="5"
+      :init-num="breakLength"
+      @time-change="timeChange"
     >
     </setter>
     <setter
       :setter-name="'Session length'"
-      :init-num="25"
+      :init-num="sessionLength"
+      @time-change="timeChange"
     >
     </setter>
   </div>
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 import Setter from './Setter'
+import Constant from '../Constant'
 
 export default {
   name: 'Setters',
+  computed: mapState(['breakLength', 'sessionLength']),
   components: {
     Setter
-  }
+  },
+  methods: mapActions({ timeChange: Constant('TIME_CHANGE') })
 }
 </script>
 

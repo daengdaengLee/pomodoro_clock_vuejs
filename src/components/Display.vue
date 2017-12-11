@@ -1,31 +1,20 @@
 <template>
   <div class="Display Session">
     <div class="State">
-      {{ state }}
+      {{ "'Session'" }}
     </div>
     <div class="Timer">
-      {{ timer }}
+      {{ sessionLength }}
     </div>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'Display',
-  props: {
-    session: {
-      type: Number,
-      default () { return 25 }
-    },
-    break: {
-      type: Number,
-      default () { return 5 }
-    }
-  },
-  created () {
-    this.state = 'Session'
-    this.timer = this.session
-  }
+  computed: mapState(['breakLength', 'sessionLength'])
 }
 </script>
 

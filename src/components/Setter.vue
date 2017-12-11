@@ -2,10 +2,10 @@
   <div class="Setter">
     <p class="Display">{{ setterName }} : {{ displayNum }}</p>
     <div class="Buttons">
-      <div class="MinusButton" @click="minus">
+      <div class="MinusButton" @click="minus(); timeChange()">
         -
       </div>
-      <div class="PlusButton" @click="plus">
+      <div class="PlusButton" @click="plus(); timeChange()">
         +
       </div>
     </div>
@@ -15,6 +15,11 @@
 <script>
 export default {
   name: 'Setter',
+  data () {
+    return {
+      timerNum: 0
+    }
+  },
   props: {
     initNum: {
       type: Number,
@@ -27,19 +32,25 @@ export default {
   },
   computed: {
     displayNum () {
-      if (this.initNum > 0) {
-        return this.initNum
+      if (this.timerNum > 0) {
+        return this.timerNum
       }
       return 1
     }
   },
   methods: {
     plus () {
-      this.initNum += 1
+      this.timerNum += 1
     },
     minus () {
-      this.initNum -= 1
+      this.timerNum -= 1
+    },
+    timeChange () {
+      this.$emit('time-change', { setterName: this.setterName, displayNum: this.displayNum })
     }
+  },
+  created () {
+    this.timerNum = this.initNum
   }
 }
 </script>
