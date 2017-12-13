@@ -1,16 +1,25 @@
 <template>
   <div id="app">
     <pomodoro-clock></pomodoro-clock>
+    <app-footer
+      :user-url="footerInfo.userUrl"
+      :code-repo-url="footerInfo.codeRepoUrl"
+    >
+    </app-footer>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import PomodoroClock from './components/PomodoroClock'
+import AppFooter from './components/AppFooter'
 
 export default {
   name: 'app',
+  computed: mapState(['footerInfo']),
   components: {
-    PomodoroClock
+    PomodoroClock,
+    AppFooter
   }
 }
 </script>
@@ -64,5 +73,17 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+html, body, #app {
+  height: 100%;
+}
+</style>
+
+<style scoped>
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 </style>
