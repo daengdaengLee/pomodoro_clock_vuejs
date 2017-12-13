@@ -61,8 +61,10 @@ export default {
   width: 12rem;
   border-radius: 0.4rem;
   color: snow;
+  height: 4rem;
 }
 .Setter .Display {
+  box-sizing: border-box;
   height: 2rem;
   display: flex;
   justify-content: center;
@@ -72,6 +74,7 @@ export default {
   cursor: default;
 }
 .Setter .Buttons {
+  box-sizing: border-box;
   display: flex;
   border-top: 1px solid white;
   height: 2rem;
