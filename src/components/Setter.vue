@@ -95,5 +95,7 @@ export default {
 .Setter .PlusButton:hover {
   cursor: pointer;
   background-color: springgreen;
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
 }
 </style>
