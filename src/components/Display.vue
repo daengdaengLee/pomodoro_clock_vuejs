@@ -4,7 +4,7 @@
       {{ state }}
     </div>
     <div class="Timer">
-      {{ timer }}, {{ timerOnOff }}, {{ timerId }}
+      {{ timer }}
     </div>
   </div>
 </template>
@@ -15,6 +15,12 @@ import _ from 'lodash'
 
 export default {
   name: 'Display',
+  props: {
+    resetOnOff: {
+      type: Boolean,
+      default () { return false }
+    }
+  },
   data () {
     return {
       state: 'Session',
@@ -47,6 +53,19 @@ export default {
     },
     mapState(['breakLength', 'sessionLength'])
   ),
+  watch: {
+    resetOnOff (bool) {
+      if (bool) {
+        if (this.timerId) {
+          clearInterval(this.timerId)
+        }
+        this.timerOnOff = false
+        this.state = 'Session'
+        this.timerCount = 0
+        this.$emit('reset-complete')
+      }
+    }
+  },
   methods: {
     timerClick () {
       this.timerOnOff = !this.timerOnOff
