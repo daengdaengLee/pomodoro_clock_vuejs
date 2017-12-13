@@ -1,5 +1,5 @@
 <template>
-  <div class="Display Session" @click="timerClick">
+  <div class="Display" @click="timerClick" :class="classState">
     <div class="State">
       {{ state }}
     </div>
@@ -37,6 +37,12 @@ export default {
         } else if (this.state === 'Break') {
           return this.calculateTimer(this.totalBreakSecs, this.timerCount)
         }
+      },
+      classState () {
+        return {
+          Session: this.state === 'Session',
+          Break: this.state === 'Break'
+        }
       }
     },
     mapState(['breakLength', 'sessionLength'])
@@ -47,6 +53,14 @@ export default {
       if (this.timerOnOff) {
       // 타이머 작동
         this.timerId = setInterval(() => {
+          if ((this.state === 'Session') && (this.totalSessionSecs === this.timerCount)) {
+            this.state = 'Break'
+            this.timerCount = -1
+          }
+          if ((this.state === 'Break') && (this.totalBreakSecs === this.timerCount)) {
+            this.state = 'Session'
+            this.timerCount = -1
+          }
           this.timerCount += 1
         }, 1000)
       } else {
@@ -59,7 +73,14 @@ export default {
       const remainTotalSecs = total - count
       const remainMin = Math.floor(remainTotalSecs / 60)
       const remainSecs = remainTotalSecs - (remainMin * 60)
-      const remainMinString = String(remainMin)
+      let remainMinString
+      switch (remainMin) {
+        case 0: case 1: case 2: case 3: case 4: case 5: case 6: case 7: case 8: case 9:
+          remainMinString = '0' + String(remainMin)
+          break
+        default:
+          remainMinString = String(remainMin)
+      }
       let remainSecsString
       switch (remainSecs) {
         case 0: case 1: case 2: case 3: case 4: case 5: case 6: case 7: case 8: case 9:
