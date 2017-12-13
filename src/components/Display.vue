@@ -116,7 +116,7 @@ export default {
 
 <style scoped>
 .Display {
-  width: 25rem;
+  width: 16rem;
   height: 6rem;
   border-radius: 0.4rem;
   margin: 1rem 0;

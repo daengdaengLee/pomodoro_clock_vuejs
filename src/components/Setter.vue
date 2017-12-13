@@ -1,14 +1,12 @@
 <template>
   <div class="Setter">
-    <p class="Display">{{ setterName }} : {{ displayNum }}</p>
-    <div class="Buttons">
-      <div class="MinusButton" @click="minus(); timeChange()">
-        -
-      </div>
-      <div class="PlusButton" @click="plus(); timeChange()">
-        +
-      </div>
-    </div>
+    <p class="Center Display">{{ setterName }} : {{ displayNum }}</p>
+    <p class="Center Button MinusButton" @click="minus(); timeChange()">
+      -
+    </p>
+    <p class="Center Button PlusButton" @click="plus(); timeChange()">
+      +
+    </p>
   </div>
 </template>
 
@@ -58,52 +56,46 @@ export default {
 <style scoped>
 .Setter {
   background-color: powderblue;
-  width: 12rem;
+  width: 16rem;
   border-radius: 0.4rem;
   color: snow;
-}
-.Setter .Display {
   height: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 1.2rem;
   font-weight: 300;
-  cursor: default;
-}
-.Setter .Buttons {
   display: flex;
-  border-top: 1px solid white;
-  height: 2rem;
-  font-size: 1.8rem;
-  font-weight: 300;
 }
-.Setter .Buttons .MinusButton {
-  border-right: 0.5px solid white;
-  width: 50%;
-  height: 100%;
+.Setter .Center {
   display: inline-flex;
   justify-content: center;
   align-items: center;
 }
-.Setter .Buttons .MinusButton:hover {
+.Setter .Display {
+  box-sizing: border-box;
+  border-right: 1px solid white;
+  height: 100%;
+  width: 70%;
+}
+.Setter .Button {
+  box-sizing: border-box;
+  height: 100%;
+  width: 15%;
+  font-size: 1.8rem;
+}
+.Setter .MinusButton {
+  box-sizing: border-box;
+  border-right: 1px solid white;
+}
+.Setter .MinusButton:hover {
   cursor: pointer;
   background-color: tomato;
-  border-bottom-left-radius: 0.4rem;
-  border-bottom-right-radius: 0.4rem;
 }
-.Setter .Buttons .PlusButton {
-  border-left: 0.5px solid white;
-  width: 50%;
-  height: 100%;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+.Setter .PlusButton {
+  box-sizing: border-box;
 }
-.Setter .Buttons .PlusButton:hover {
+.Setter .PlusButton:hover {
   cursor: pointer;
   background-color: springgreen;
-  border-bottom-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
   border-bottom-right-radius: 0.4rem;
 }
 </style>

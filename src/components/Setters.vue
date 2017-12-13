@@ -32,8 +32,10 @@ export default {
 
 <style scoped>
 .Setters {
+  width: 16rem;
+  height: 5rem;
   display: flex;
-  width: 25rem;
+  flex-direction: column;
   justify-content: space-between;
 }
 </style>
