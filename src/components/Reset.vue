@@ -18,7 +18,7 @@ export default {
 <style scoped>
 .Reset {
   box-sizing: border-box;
-  width: 25rem;
+  width: 16rem;
   height: 3rem;
   border: 1px solid white;
   border-radius: 0.4rem;

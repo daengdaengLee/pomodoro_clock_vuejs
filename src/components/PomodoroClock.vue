@@ -35,7 +35,7 @@ export default {
 
 <style scoped>
 .PomodoroClock {
-  width: 30rem;
+  width: 18rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,7 +45,7 @@ export default {
 }
 .PomodoroClock .Heading {
   margin: 2rem 0;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 300;
   color: snow;
 }
