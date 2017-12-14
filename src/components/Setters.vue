@@ -33,7 +33,7 @@ export default {
 <style scoped>
 .Setters {
   width: 16rem;
-  height: 5rem;
+  height: 80px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

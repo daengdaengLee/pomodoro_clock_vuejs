@@ -59,7 +59,7 @@ export default {
   width: 16rem;
   border-radius: 0.4rem;
   color: snow;
-  height: 2rem;
+  height: 32px;
   font-size: 1.2rem;
   font-weight: 300;
   display: flex;
