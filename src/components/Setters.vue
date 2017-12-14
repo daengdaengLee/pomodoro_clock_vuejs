@@ -34,6 +34,7 @@ export default {
 .Setters {
   width: 16rem;
   height: 80px;
+  min-height: 80px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
