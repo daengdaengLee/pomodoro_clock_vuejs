@@ -20,6 +20,7 @@ export default {
   box-sizing: border-box;
   width: 16rem;
   height: 48px;
+  min-height: 48px;
   border: 1px solid white;
   border-radius: 0.4rem;
   font-size: 1.5rem;

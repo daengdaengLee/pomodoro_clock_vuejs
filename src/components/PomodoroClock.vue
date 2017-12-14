@@ -35,6 +35,8 @@ export default {
 
 <style scoped>
 .PomodoroClock {
+  margin-top: 4rem;
+  min-height: 384px;
   width: 18rem;
   display: flex;
   flex-direction: column;
