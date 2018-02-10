@@ -1,27 +1,33 @@
-# pomodoro_clock_vuejs
+# 웹 토마토 시계
 
-> A Vue.js project
+> Vue.js 를 이용해 만든 웹 토마토 시계입니다. Vuex 를 이용하여 상태를 관리합니다.
+>
+> JavaScript 의 `setInterval` 메소드와 `clearInterval` 메소드를 이용해 타이머 기능을 구현했습니다.
 
-## Build Setup
+## 둘러보기
 
-``` bash
-# install dependencies
-npm install
+0. [들어가며](#0-들어가며)
+1. [데모 페이지](#1-데모-페이지)
+2. [마치며](#2-마치며)
 
-# serve with hot reload at localhost:8080
-npm run dev
+## 0. 들어가며
 
-# build for production with minification
-npm run build
+Vue.js 를 이용해 만든 웹 토마토 시계입니다.  
+Vuex 를 이용하여 각 쉬는 시간과 세션 시간 길이를 중앙에서 관리합니다.  
+JavaScript 의 `setInterval` 메소드와 `clearInterval` 메소드를 이용해 타이머 기능을 구현했습니다. 컴포넌트에서 `setInterval` 메소드를 통해 1초마다 시간을 새로 계산해서 화면에 표현합니다. 이 기능은 Vuex 로직과는 분리되어 있습니다.
 
-# build for production and view the bundle analyzer report
-npm run build --report
+## 1. 데모 페이지
 
-# run unit tests
-npm run unit
+데모 페이지는 [여기](https://daengdaenglee.github.io/pomodoro_clock_vuejs/)에서 확인할 수 있습니다.
 
-# run all tests
-npm test
-```
+로컬에서 실행할 경우 git, node.js, npm 이 필요합니다.
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+  1. git 을 이용해 프로젝트를 클론합니다.
+  2. npm install 명령어로 필요한 패키지를 다운받습니다.
+  3. npm run dev 명령어로 개발 서버를 실행합니다.
+
+## 2. 마치며
+
+타이머 로직은 Vuex 에서 관리하도록 업데이트 할 예정입니다.
+
+[여기](#웹-토마토-시계)를 클릭하면 처음으로 돌아갑니다.
